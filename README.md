@@ -206,7 +206,77 @@ curl -X POST http://localhost:8001/resolve_url \
 
 ## Configuration (config.json)
 
-All settings are in `config.json` at the project root:
+All settings are in `config.json` at the project root. Here's a detailed guide:
+
+```jsonc
+{
+  // ─── Server Port ─────────────────────────────────────────────────
+  // The port your cipher server listens on.
+  // Set this to match your Pterodactyl allocation port.
+  // Default: 8001
+  "server": {
+    "port": 3006,
+    "host": "0.0.0.0"
+  },
+
+  // ─── Password ────────────────────────────────────────────────────
+  // This is the PASSWORD to protect your cipher server.
+  // Set any password here. Example: "MySecret123"
+  // This SAME password must be set in your Lavalink application.yml
+  // under remoteCipher → password
+  //
+  // Leave EMPTY ("") if you don't want a password (not recommended)
+  //
+  // Then in Lavalink application.yml:
+  //   remoteCipher:
+  //     url: "http://your-server:port"
+  //     password: "MySecret123"    ← same password
+  "auth": {
+    "apiToken": ""
+  },
+
+  // ─── Workers ─────────────────────────────────────────────────────
+  // How many threads to use for processing.
+  // Set to 1 if you have 50% CPU or limited resources.
+  // More threads = more CPU usage. 1 is safe for limited CPU.
+  // Set to 0 to auto-detect based on CPU cores.
+  "workers": {
+    "maxThreads": 1
+  },
+
+  // ─── Caching ─────────────────────────────────────────────────────
+  // Cache sizes control how many items are stored in memory.
+  // Lower values = less RAM usage. Higher values = faster responses.
+  // Default is 150 — set to 30 if you only have 1GB RAM.
+  //
+  // cacheStalenessDays: delete old cached player scripts after X days
+  // (saves disk space)
+  "cache": {
+    "preprocessedCacheSize": 30,
+    "stsCacheSize": 30,
+    "solverCacheSize": 30,
+    "cacheStalenessDays": 7
+  },
+
+  // ─── Player Variant ──────────────────────────────────────────────
+  // overridePlayerVariant: Keep this as "IAS" — it works best.
+  //   Don't change unless you know what you're doing.
+  //   Options: IAS, IAS_TCC, IAS_TCE, ES5, ES6, TV, PHONE, EMBED
+  //
+  // overridePlayerId: Force a specific 8-char player ID.
+  //   Leave empty ("") for automatic detection.
+  //
+  // ignoreScriptRegion: Set to true to ignore regional differences
+  //   in player scripts (en_US, de_DE, etc.)
+  "player": {
+    "overridePlayerId": "",
+    "overridePlayerVariant": "IAS",
+    "ignoreScriptRegion": false
+  }
+}
+```
+
+### Quick Reference Table
 
 | Section | Key | Default | Description |
 |---|---|---|---|
@@ -221,6 +291,7 @@ All settings are in `config.json` at the project root:
 | `player` | `overridePlayerId` | *(empty)* | Force a player script ID (8 chars) |
 | `player` | `overridePlayerVariant` | *(empty)* | Force a player variant (recommended: `IAS`) |
 | `player` | `ignoreScriptRegion` | `false` | Ignore regional differences |
+
 
 ---
 
