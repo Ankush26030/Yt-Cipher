@@ -6,8 +6,8 @@ node_modules/
 player_cache/
 .cache/
 
-# Configuration (contains secrets)
-config.json
+# Configuration (uncomment if you add secrets)
+# config.json
 
 # OS
 .DS_Store

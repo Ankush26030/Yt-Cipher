@@ -1,0 +1,27 @@
+{
+  "server": {
+    "port": 3006,
+    "host": "0.0.0.0"
+  },
+
+  "auth": {
+    "apiToken": ""
+  },
+
+  "workers": {
+    "maxThreads": 1
+  },
+
+  "cache": {
+    "preprocessedCacheSize": 30,
+    "stsCacheSize": 30,
+    "solverCacheSize": 30,
+    "cacheStalenessDays": 7
+  },
+
+  "player": {
+    "overridePlayerId": "",
+    "overridePlayerVariant": "IAS",
+    "ignoreScriptRegion": false
+  }
+}
