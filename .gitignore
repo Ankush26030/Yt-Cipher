@@ -1,0 +1,24 @@
+# Dependencies
+ejs/
+node_modules/
+
+# Cache
+player_cache/
+.cache/
+
+# Configuration (contains secrets)
+config.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Old TypeScript artifacts
+types/
+tsconfig.json
+deno.json
+package-lock.json

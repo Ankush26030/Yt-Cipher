@@ -1,0 +1,19 @@
+{
+  "name": "yt-cipher",
+  "version": "1.0.0",
+  "description": "YouTube Player Signature Deciphering API — compatible with Lavalink remoteCipher",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "node scripts/setup-ejs.mjs"
+  },
+  "dependencies": {
+    "meriyah": "^6.0.2",
+    "astring": "^1.9.0",
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
