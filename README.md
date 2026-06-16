@@ -76,7 +76,7 @@ You should see in the console:
 
 ```bash
 # Clone the project
-git clone https://github.com/your-user/yt-cipher.git
+git clone https://github.com/Ankush26030/yt-cipher.git
 cd yt-cipher
 
 # Run setup (clones ejs + installs dependencies)
